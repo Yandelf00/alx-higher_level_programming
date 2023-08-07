@@ -1,9 +1,9 @@
 #include "lists.h"
 
 /**
- * check_cycle - finds a loop in a linked list
- * @list: beggining of linked list
- * Return: 1 if loop 0 if no loop
+ * check_cycle - finds the cycle in linkedlist
+ * @list: head of list
+ * Return: 1 if cycle and 0 if no cycle
  */
 
 int check_cycle(listint_t *list)
