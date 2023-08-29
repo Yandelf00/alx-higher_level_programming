@@ -77,15 +77,10 @@ class Square:
 
     def my_print(self):
         """prints in stdout the square with #"""
-        printSize = self.__size
-        if printSize == 0:
-            print()
+        if self.__size == 0:
+            print("")
         else:
             for y in range(self.__position[1]):
                 print()
-            for i in range(printSize):
-                for x in range(self.__position[0]):
-                    print(" ", end="")
-                for j in range(printSize):
-                    print("#", end="")
-                print()
+            sqr_pattern = " " * self.__position[0] + "#" * self.__size + "\n"
+            print(sqr_pattern * self.__size, end="")
