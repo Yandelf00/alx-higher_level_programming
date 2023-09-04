@@ -81,6 +81,7 @@ class Rectangle:
                 if i < self.height - 1:
                     string += "\n"
             return string
+
     def __repr__(self):
         """
         prints string representing width and height
