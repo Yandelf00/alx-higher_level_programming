@@ -1,23 +1,41 @@
 #!/usr/bin/python3
-"""
-
-function that divides all elements of a matrix
-
-"""
+"""matrix_divided."""
 
 
 def matrix_divided(matrix, div):
+    """matrix_divided.
+
+    Args:
+        param matrix: the matrix to e divided.
+        param div: the divisor.
+    Returns:
+        return a new matrix.
     """
-    function that divides all elements of a matrix
-    """
-    for x in matrix:
-        if len(x) != len(matrix[0]):
-            raise TypeError("Each row of the matrix must have the same size")
-        for y in x:
-            if type(y) is not float or type(y) is not int:
-                raise TypeError("matrix must be a matrix (list of lists) of integers/floats")
-    if not (isinstance(div, (int, float))):
+    type_msg = "matrix must be a matrix (list of lists) of integers/floats"
+    if not isinstance(div, (int, float)):
         raise TypeError("div must be a number")
+
     if div == 0:
         raise ZeroDivisionError("division by zero")
-    return [[round(y / div, 2) for y in x] for x in matrix]
+
+    if not isinstance(matrix, list) or not matrix:
+        raise TypeError(type_msg)
+
+    if not all(isinstance(item, list) and item for item in matrix):
+        raise TypeError(type_msg)
+
+    if not all(isinstance(num, (int, float)) for row in matrix for num in row):
+        raise TypeError(type_msg)
+
+    row_len = len(matrix[0])
+    if not all(len(row) == row_len for row in matrix):
+        raise TypeError("Each row of the matrix must have the same size")
+
+    new_matrix = []
+    for row in matrix:
+        new_row = []
+        for num in row:
+            result = round(num / div, 2)
+            new_row.append(result)
+        new_matrix.append(new_row)
+    return new_matrix
