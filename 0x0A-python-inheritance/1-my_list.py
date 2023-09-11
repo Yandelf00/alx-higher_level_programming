@@ -1,11 +1,10 @@
 #!/usr/bin/python3
-"""
-class MyList
-"""
+"""MyList."""
 
 
 class MyList(list):
-    """MyList"""
+    """MyList."""
+
     def print_sorted(self):
-        """ prints wtvr"""
+        """print_sorted."""
         print(sorted(self))
