@@ -1,10 +1,25 @@
 #!usr/bin/python3
 """class rectangle"""
+
+
 from models.base import Base
 
 
 class Rectangle(Base):
-    """class rectangle"""
+    """Initialize a new Rectangle.
+
+        Args:
+            width (int): The width of the new Rectangle.
+            height (int): The height of the new Rectangle.
+            x (int): The x coordinate of the new Rectangle.
+            y (int): The y coordinate of the new Rectangle.
+            id (int): The identity of the new Rectangle.
+        Raises:
+            TypeError: If either of width or height is not an int.
+            ValueError: If either of width or height <= 0.
+            TypeError: If either of x or y is not an int.
+            ValueError: If either of x or y < 0.
+        """
     def __init__(self, width, height, x=0, y=0, id=None):
         """init method"""
         super().__init__(id)
@@ -20,7 +35,9 @@ class Rectangle(Base):
 
     @width.setter
     def width(self, value):
-        """sets width value"""
+        """width.
+
+        :param value: param."""
         if type(value) is not int:
             raise TypeError("width must be an integer")
         if value <= 0:
@@ -34,7 +51,9 @@ class Rectangle(Base):
 
     @height.setter
     def height(self, value):
-        """sets height value"""
+        """heigh.
+
+        :param value: param."""
         if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value <= 0:
@@ -88,7 +107,17 @@ class Rectangle(Base):
         return string
 
     def update(self, *args, **kwargs):
-        """ update class """
+        """Update the Rectangle.
+
+        Args:
+            *args (ints): New attribute values.
+                - 1st argument represents id attribute
+                - 2nd argument represents width attribute
+                - 3rd argument represent height attribute
+                - 4th argument represents x attribute
+                - 5th argument represents y attribute
+            **kwargs (dict): New key/value pairs of attributes.
+        """
         argCount = len(args)
         if argCount == 0:
             if "id" in kwargs.keys():
