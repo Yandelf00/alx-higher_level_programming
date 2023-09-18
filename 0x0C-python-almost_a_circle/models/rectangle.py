@@ -1,11 +1,13 @@
 #!usr/bin/python3
 """class rectangle"""
 
+
 from base import Base
 
-Class Rectangle(Base) :
+
+class Rectangle(Base):
     """class rectangle"""
-    def __init__(self, width, height, x = 0, y = 0, id = None):
+    def __init__(self, width, height, x=0, y=0, id=None):
         """init method"""
         super().__init__(id)
         self.__width = width
@@ -68,7 +70,7 @@ Class Rectangle(Base) :
         elif value < 0:
             raise ValueError("y must be >= 0")
         self.__y = value
-    
+
     def area(self):
         """returns area"""
         return self.width * self.__height

@@ -1,19 +1,20 @@
 #!/usr/bin/python3
 """base class"""
 
+
 class Base:
     """base class"""
     __nb_objects = 0
 
     def __init__(self, id=None):
         """init func"""
-        if id is not None : 
+        if id is not None:
             self.id = id
-        else :
+        else:
             Base.__nb_objects += 1
-            self.id =Base.__nb_objects
+            self.id = Base.__nb_objects
 
-     @staticmethod
+    @staticmethod
     def to_json_string(list_dictionaries):
         """ converts dict to json """
         if list_dictionaries is None or list_dictionaries == []:
@@ -51,11 +52,8 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ returns a list of instances """
-        try:
-            with open(cls.__name__ + ".json", "r") as f:
-                contentRead = f.read()
-        except:
-            return []
+        with open(cls.__name__ + ".json", "r") as f:
+            contentRead = f.read()
         listOfDicts = cls.from_json_string(contentRead)
         return [cls.create(**inst) for inst in listOfDicts]
 
@@ -75,7 +73,6 @@ class Base:
             turtle.fd(rec["width"])
             turtle.right(90)
             turtle.fd(rec["height"])
-        
         for square in list_squares:
             size = square["size"]
             turtle.up()
