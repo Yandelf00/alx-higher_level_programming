@@ -2,6 +2,6 @@
 
 const first = ['C is fun', 'Python is cool', 'Javascript is amazing'];
 
-for (let f in first) {
+for (const f of first) {
   console.log(f);
 }
