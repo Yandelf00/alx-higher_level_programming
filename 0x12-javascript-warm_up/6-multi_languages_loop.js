@@ -1,7 +1,8 @@
 #!/usr/bin/node
 
-const first = ['C is fun', 'Python is cool', 'Javascript is amazing'];
-
-for (const f of first) {
-  console.log(f);
+const liste = ['C is fun', 'Python is cool', 'JavaScript is amazing'];
+let i = 0;
+while (liste[i]) {
+  console.log(liste[i]);
+  i++;
 }
