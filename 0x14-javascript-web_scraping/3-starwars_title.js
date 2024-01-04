@@ -8,8 +8,8 @@ if (!movieId) {
   process.exit(1);
 }
 
-const first_url = `https://swapi-api.alx-tools.com/api/films/`;
-const url = `https://swapi-api.alx-tools.com/api/films/` + movieId;
+const firstUrl = 'https://swapi-api.alx-tools.com/api/films/';
+const url = firstUrl + movieId;
 
 request(url, (error, response, body) => {
   if (error) {
