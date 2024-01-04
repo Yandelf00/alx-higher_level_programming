@@ -2,7 +2,6 @@
 
 const request = require('request');
 const url = process.argv[2];
-const wedgeId = 18;
 
 request(url, function (err, response, body) {
   if (err) {
